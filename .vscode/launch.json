@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Parse - LTR",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/MtgDraftAnalyser/bin/Debug/net8.0/MtgDraftAnalyser.dll",
+            "args": [
+                "draft_data_public.LTR.PremierDraft"
+            ],
+            "cwd": "${workspaceFolder}/MtgDraftAnalyser",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Parse - WOE",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/MtgDraftAnalyser/bin/Debug/net8.0/MtgDraftAnalyser.dll",
+            "args": [
+                "draft_data_public.WOE.PremierDraft"
+            ],
+            "cwd": "${workspaceFolder}/MtgDraftAnalyser",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Parse - Test",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/MtgDraftAnalyser/bin/Debug/net8.0/MtgDraftAnalyser.dll",
+            "args": [
+                "test-data-big"
+            ],
+            "cwd": "${workspaceFolder}/MtgDraftAnalyser",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
