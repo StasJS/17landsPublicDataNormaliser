@@ -12,19 +12,11 @@ namespace Model
 
         public IReadOnlyList<Card> Cards => Picks.Select(p => p.Selection).ToList();
 
-        public ILookup<Card, int> UniqueCards => Picks.GroupBy(p => p.Selection).ToLookup(g => g.Key, g => g.Count());
+        public IReadOnlyDictionary<Card, int> UniqueCards => Picks.GroupBy(p => p.Selection).ToDictionary(g => g.Key, g => g.Count());
     }
 
     public record class Pack(ISet<Card> Cards)
     {
-        public int Distance(Pack other)
-        {
-            if (Cards.Count != other.Cards.Count)
-            {
-                throw new Exception("TODO");
-            }
-            return Cards.Count - Cards.Intersect(other.Cards).Count();
-        }
     }
 
     public record struct Pick(int PackNumber, int PickNumber, Pack Pack, Card Selection);
